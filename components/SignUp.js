@@ -1,42 +1,32 @@
 import { Auth } from "aws-amplify";
-import SocialSignIn from "./SocialSignIn";
 import Input from "./Input";
 
-export default function SignIn({ onChange, setUiState, signIn }) {
+export default function SignUp({ onChange, setUiState, signUp }) {
   return (
     <div>
-      <p className="text-3xl font-black">Sign in to your Account</p>
+      <p className="text-3xl font-black">Sign up for an Account</p>
       <div className="mt-10">
         <label className="text-sm">Email</label>
         <Input onChange={onChange} name="email" />
       </div>
       <div className="mt-4">
-        <label className="text-sm">
-          Password
-          <span
-            onClick={() => setUiState("forgotPassword")}
-            className="text-sm ml-8 sm:ml-48 text-pink-600"
-          >
-            Forgot your Password?
-          </span>
-        </label>
+        <label className="text-sm">Password</label>
         <Input onChange={onChange} name="password" type="password" />
       </div>
       <button
-        onClick={signIn}
+        onClick={signUp}
         className="text-white w-full mt-6 bg-pink-600 p-3 rounded"
       >
-        Sign In
+        Sign Up
       </button>
-      <SocialSignIn />
       <p className="mt-12 text-sm font-light">
-        Don't have an account?
+        Have an account?
         <span
-          onClick={() => setUiState("signUp")}
+          onClick={() => setUiState("signIn")}
           role="button"
           className="text-sm cursor-pointer text-pink-600"
         >
-          Sign Up
+          Sign In
         </span>
       </p>
     </div>
