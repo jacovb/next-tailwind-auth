@@ -10,7 +10,7 @@ export default function ConfirmSignUp({ onChange, setUiState, confirmSignUp }) {
       </div>
 
       <button
-        onClick={ConfirmSignUp}
+        onClick={confirmSignUp}
         className="text-white w-full mt-6 bg-pink-600 p-3 rounded"
       >
         Confirm Sign Up
